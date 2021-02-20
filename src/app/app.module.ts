@@ -17,7 +17,6 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {TutorialComponent} from './tutorial/tutorial.component';
-import {TestComponent} from './test/test.component';
 import {ControlsComponent} from './controls/controls.component';
 import {WiggleComponent} from './wiggle/wiggle.component';
 import {CommonModule} from '@angular/common';
@@ -34,7 +33,6 @@ const routes: Routes = [
     NavbarComponent,
     HomeComponent,
     TutorialComponent,
-    TestComponent,
     ControlsComponent,
     WiggleComponent,
   ],

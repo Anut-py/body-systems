@@ -1,0 +1,14 @@
+<br/>
+<div [ngStyle]="{'width.px': width}">
+  <div class="buttons">
+    <button mat-mini-fab color="accent" (click)="animation.seek(0)">
+      <mat-icon color="white">fast_rewind</mat-icon>
+    </button>
+    <button mat-mini-fab color="accent" (click)="animation.paused(!animation.paused())">
+      <mat-icon color="white">{{paused ? 'play_arrow' : 'pause_arrow'}}</mat-icon>
+    </button>
+    <button mat-mini-fab color="accent" (click)="animation.seek(animation.endTime(true))">
+      <mat-icon color="white">fast_forward</mat-icon>
+    </button>
+  </div>
+</div>

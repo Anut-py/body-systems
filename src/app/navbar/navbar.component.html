@@ -1,0 +1,63 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="home" routerLinkActive="active"
+      >
+        <mat-icon>home</mat-icon>&nbsp;Home</a
+      >
+      <a mat-list-item href="#"
+      >
+        <mat-icon>air</mat-icon>&nbsp;Respiratory System</a
+      >
+      <a mat-list-item href="#"
+      >
+        <mat-icon>favorite</mat-icon>&nbsp;Circulatory System</a
+      >
+      <a mat-list-item href="#"
+      ><img
+        src="/assets/bone.svg"
+        width="24"
+        height="24"
+        style="transform: rotate(-45deg)"
+        alt="Bone"
+      />&nbsp;Skeletal System</a
+      >
+      <a mat-list-item routerLink="tutorial" routerLinkActive="active"
+      >
+        <mat-icon>help</mat-icon>&nbsp;Tutorial</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="overflow-x: hidden">
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>The Inner Workings of the Body</span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <div style="position: sticky; bottom: 0; height: 50px; background-color: #fafafa">
+      <hr/>
+      <h1 style="float: left; display: inline-block; margin-left: 20px; font-weight: 300">Brought to you by
+        <span style="font-weight: 500">Anut</span></h1>
+      <i style="float: right; display: inline-block; margin-right: 20px">&copy;Copyright 2021 Anand Swaroop</i>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<div *ngIf="showChangeOrient" class="change-orient-alert">
+  <mat-icon color="white">smartphone</mat-icon>
+</div>

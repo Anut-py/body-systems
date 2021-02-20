@@ -1,0 +1,50 @@
+<div class="container">
+  <app-wiggle text="Tutorial"></app-wiggle>
+  <mat-horizontal-stepper>
+    <mat-step label="Select an organ system">
+      <p>To select an organ system, click on it in the menu on the left side.</p>
+      <div>
+        <button mat-raised-button matStepperNext color="primary">Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Start an Animation">
+      <p>To start an animation, press the play button. To pause an animation, press the pause button. You can practice
+        on this animation.</p>
+      <div class="bordered">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <app-controls [animation]="boxAnimation" [width]="300"></app-controls>
+      </div>
+      <div>
+        <button mat-raised-button matStepperPrevious color="primary">Back</button>
+        <button mat-raised-button matStepperNext color="primary" style="margin-left: 10px">Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Control an Animation">
+      <p>To go to the start of an animation, press the rewind arrow. To go to the end of an animation, press the fast
+        forward arrow. You can practice on this animation.</p>
+      <div class="bordered">
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <app-controls [width]="300" [animation]="secondAnimation"></app-controls>
+      </div>
+      <div>
+        <button mat-raised-button matStepperPrevious color="primary">Back</button>
+        <button mat-raised-button matStepperNext color="primary" style="margin-left: 10px">Next</button>
+      </div>
+    </mat-step>
+    <mat-step label="Finish">
+      <p>You have finished the tutorial! Now you can get started with exploring the website.</p>
+      <button mat-raised-button color="primary" (click)="goHome()">Finish</button>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+<!--<div style="width: 928px">-->
+<!--  <div *ngFor="let num of nums" class="circle circle-{{num}}" (click)="wave(num)"></div>-->
+<!--</div>-->

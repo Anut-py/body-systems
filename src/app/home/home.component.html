@@ -1,0 +1,66 @@
+<div class="grid-container">
+  <app-wiggle text="Welcome!"></app-wiggle>
+  <p class="mat-typography left">
+    Welcome to the Inner Workings of the Body! In this website, you will learn
+    about all the organ systems in the human body. If you don't know how to use
+    this website, you can try the tutorial, or you can look at the cards below.
+  </p>
+  <mat-grid-list [cols]="3" rowHeight="35vh">
+    <mat-grid-tile [colspan]="3">
+      <mat-card class="dashboard-card right">
+        <mat-card-header>
+          <mat-card-title>Tutorial</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <p>
+            Don't know where to start? Try the tutorial! In the tutorial, you will
+            learn how to select an organ system and control the animations of an
+            organ system.
+          </p>
+          <button mat-raised-button color="accent" routerLink="/tutorial">
+            Get started
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="smallScreen ? 3 : 1" [rowspan]="2">
+      <mat-card class="dashboard-card left">
+        <mat-card-header>
+          <mat-card-title>Selecting an Organ System</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <p>
+            To select an organ system, click on it in the menu on the left side.
+          </p>
+          <img src="/assets/select-system.gif" alt="Selecting an organ system" style="height: 100%; width: 100%; object-fit: contain"/>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="smallScreen ? 3 : 1" [rowspan]="2">
+      <mat-card class="dashboard-card bottom">
+        <mat-card-header>
+          <mat-card-title>Play/Pause Animations</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <p>
+            To play/pause an animation, click the play button or the pause button.
+          </p>
+          <img src="/assets/play-pause.gif" width="90%" alt="Playing and pausing an animation"/>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="smallScreen ? 3 : 1" [rowspan]="2">
+      <mat-card class="dashboard-card right">
+        <mat-card-header>
+          <mat-card-title>Controlling Animations</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <p>
+            You can skip to the start or end of an animation by pressing the rewind or fast forward buttons.
+          </p>
+          <img src="/assets/control.gif" width="90%" alt="Skipping to the start and end of an animation"/>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

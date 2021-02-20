@@ -1,0 +1,33 @@
+@import "../../theming.scss";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.active {
+  color: map-get($organ-app-primary, 500);
+}
+
+.change-orient-alert {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #771111;
+  top: 0;
+  left: 0;
+  z-index: 99999999999;
+}
